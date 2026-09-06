@@ -12,3 +12,10 @@ Desktop.ini
 # Python
 __pycache__/
 *.py[cod]
+
+# Fotos originais de estudio (~9 MB cada). Ficam so na maquina;
+# o site usa as versoes otimizadas em assets/img.
+originais/
+
+# O biolink tem repositorio proprio: souhelenaholanda-dot/biolinkhelena
+biolinkhelena/

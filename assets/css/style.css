@@ -404,7 +404,6 @@ p.script{
 
 .card{
   --c:var(--pink);
-  --media-h:170px;
   position:relative;
   display:flex;
   flex-direction:column;
@@ -422,7 +421,9 @@ p.script{
 .card--purple{--c:var(--purple)}
 
 .card__media{
-  height:var(--media-h);
+  /* proporcao igual a das fotos (4:5), entao nada e cortado
+     em nenhuma largura de tela */
+  aspect-ratio:4/5;
   border-radius:var(--radius-sm) var(--radius-sm) 0 0;
   overflow:hidden;
 }
@@ -435,7 +436,7 @@ p.script{
 
 .card__badge{
   position:absolute;
-  top:var(--media-h);
+  top:0;              /* ancorado na borda do corpo do card */
   left:20px;
   display:grid;
   place-items:center;
@@ -449,6 +450,7 @@ p.script{
 }
 
 .card__body{
+  position:relative;
   flex:1;
   display:flex;
   flex-direction:column;
@@ -468,6 +470,7 @@ p.script{
   line-height:1.6;
   margin-bottom:1.4em;
 }
+.card__body p:last-child{margin-bottom:0}
 .card__link{
   margin-top:auto;
   display:inline-flex;
@@ -494,13 +497,15 @@ p.script{
   position:absolute;
   inset:0;
   z-index:-2;
-  background:#1c2a1b url('../img/helena-citacao.jpg') center 30%/cover no-repeat;
+  background:#0a223a url('../img/helena-citacao.jpg') center 32%/cover no-repeat;
 }
 .citacao__veil{
   position:absolute;
   inset:0;
   z-index:-1;
-  background:linear-gradient(90deg,rgba(8,18,12,.9) 0%,rgba(8,18,12,.72) 34%,rgba(8,18,12,.34) 62%,rgba(8,18,12,.55) 100%);
+  /* veu azul-marinho: a foto de estudio tem fundo claro, um veu
+     esverdeado deixaria a imagem suja */
+  background:linear-gradient(90deg,rgba(10,34,58,.93) 0%,rgba(10,34,58,.8) 32%,rgba(10,34,58,.42) 58%,rgba(10,34,58,.66) 100%);
 }
 
 .citacao__inner{
@@ -970,7 +975,7 @@ p.script{
   .wave--hero,.wave--hero svg{height:60px}
 
   .cards{grid-template-columns:minmax(0,1fr);gap:34px}
-  .card{--media-h:200px}
+  .card__media{aspect-ratio:1/1}   /* card unico: quadro menos alto */
 
   .pills{gap:18px 24px}
   .pill{font-size:.76rem}
