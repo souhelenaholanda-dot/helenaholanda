@@ -381,7 +381,7 @@ p.script{
   border:1.5px solid rgba(233,58,93,.35);
   border-radius:50%;
   color:var(--pink);
-  font-size:1.15rem;
+  font-size:1.35rem;
   background:#fff;
   transition:transform .25s var(--ease),box-shadow .25s var(--ease);
 }
@@ -445,7 +445,7 @@ p.script{
   border-radius:50%;
   background:var(--c);
   color:#fff;
-  font-size:1.4rem;
+  font-size:1.6rem;   /* o .ico usa 1em, entao o icone escala por aqui */
   box-shadow:0 8px 18px rgba(20,40,70,.22);
 }
 
@@ -977,9 +977,10 @@ p.script{
   .cards{grid-template-columns:minmax(0,1fr);gap:34px}
   .card__media{aspect-ratio:1/1}   /* card unico: quadro menos alto */
 
-  .pills{gap:18px 24px}
+  .pills{gap:18px 22px}
   .pill{font-size:.76rem}
-  .pill__ico{width:40px;height:40px;font-size:1rem}
+  .pill__ico{width:42px;height:42px;font-size:1.25rem}
+  .card__badge{width:50px;height:50px;font-size:1.5rem}
 
   .logo--hero{font-size:17px}
   .logo--quote{font-size:16px}
